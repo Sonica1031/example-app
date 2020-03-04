@@ -1,0 +1,12 @@
+.App{
+  max-width: 100vw;
+}
+
+.done{
+  width: 500px;
+  background-color: grey;
+}
+
+.static{
+  position: static;
+}
