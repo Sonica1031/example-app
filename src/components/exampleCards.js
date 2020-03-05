@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 function ExampleCards(props){
 
-    const [checkered, setCheckered] = useState(false)
+    const [checkered, setCheckered] = useState("yes")
     const onClicker = (e) =>{
         setCheckered(e.target.value);
     }
@@ -16,8 +16,8 @@ function ExampleCards(props){
     name={props.name}
     id={`yes ${props.group + props.id}`}
     value="yes"
-    onClick={onClicker}
-    checked={checkered === "yes"}/>
+    onMouseDown={onClicker}
+    checked={(checkered === "yes")}/>
     yes</label>
     <label>
     <input
@@ -25,8 +25,8 @@ function ExampleCards(props){
     name={props.name}
     id={`no ${props.group + props.id}`}
     value="no"
-    onClick={onClicker}
-    checked={checkered === "no"}/>
+    onMouseDown={onClicker}
+    checked={(checkered === "no")}/>
     no</label>
     <label>
     <input
@@ -34,8 +34,8 @@ function ExampleCards(props){
     name={props.name}
     id={`sometimes ${props.group + props.id}`}
     value="sometimes"
-    onClick={onClicker}
-    checked={checkered === "sometimes"}/>
+    onMouseDown={onClicker}
+    checked={(checkered === "sometimes")}/>
     sometimes</label>
     </form>
     </div>
