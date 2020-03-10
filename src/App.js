@@ -1,8 +1,8 @@
 import React, {useReducer, useState, dispatch} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ExampleCards from './components/exampleCards';
-import {initialValue, reducerFunc} from './Reducer/reducer'
+import {initialValue, reducerFunc} from './Reducer/reducer';
+import NewFile from './components/NewFile';
 
 function App() {
 const [state, dispatch] = useReducer(reducerFunc, initialValue)
@@ -32,6 +32,7 @@ const removeDone = (e) =>{
       <div>
       <button onClick={clickHandler}>Add</button>
       <button onClick={removeDone}>Remove</button>
+      <NewFile />
       {state.question.map(item =>{
         return(
           <div>

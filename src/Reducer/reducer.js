@@ -1,5 +1,8 @@
+import React from 'react';
+
 export const initialValue = {
-question:[]
+question:[],
+nav:[]
 }
 
 export const reducerFunc = (state, action) => {
@@ -26,6 +29,11 @@ export const reducerFunc = (state, action) => {
                    return item
                }else return
            })]}
+        case "ADD_PAGE":
+           const newFile = document.implementation.createHTMLDocument(action.payload)
+           const newFileBody = newFile.querySelector('body');
+           newFileBody.classList.add("root");
+           return {...state, nav: [...state.nav, <a href={action.payload}>{action.payload}</a>]}
     default:
         return state;
 }
